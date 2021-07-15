@@ -16,6 +16,10 @@ where ip is the IP address of your virtual machine
 >
 > *apt-get dist-upgrade -y*
 
+3) Install other tools
+> *apt install net-tools -y*
+
+
 ## Install Docker and Docker-Compose
 Next, install docker and docker-compose  
 > *apt install docker.io*
