@@ -100,6 +100,7 @@ where ip is the IP address of your virtual machine
 3) Install other tools
 > *apt install net-tools -y*
 
+
 ### 2.2 - Create non-root user
 It is good practice to access the system using a non-root account. 
 Create a new user that you will login into the system with and use *sudo* if you require 
@@ -111,14 +112,43 @@ root access.
 > 
 > *usermod \-aG docker yourusername*
 
+
 ### 2.3 - Secure your login access
 As root account contains the highest privileges, you want to restrict the use of this account only when required.
 In this section, you will secure your server by enforcing login using ssh certificate only and disabling login using the root user account.
 
+Clone the sshd_config file in this repo and copy it to /etc/ssh/ directory.
+
+Restart the sshd daemon with the following command:
+
+> *sudo systemctl reload ssh*
+
+Open another terminal and test that you cannot login directly using root account anymore and the only way you can login to your server
+is by using the ssh key and non-root user which you have created in the previous step.
+
+> *ssh -i ./id_sample_rsa yourusername@ip-addr*
+
+Replace yourusername and ip-addr with the actual username and IP address of your server.
+
+Congratulations, you have now secured access to your server! This is just the first step. In subsequent documents, it will cover additional setups such as configuring firewalls to beef up the security of your setup.
 
 
-### 2.4 - Install Docker and Docker-Compose
-Next, install docker and docker-compose  
+
+### 2.4 - Other Non-security related setups
+This section will perform additional setups, not security-related, you can choose to skip it.
+
+Change your login shell to bash:
+> *sudo chsh -s /bin/bash yourusername*
+
+If your user account was created using /bin/sh, you might discover that things like your up/down arrow etc will not be functioning.
+The above command will change it to /bin/bash and you either need to log out and into your account again or run the .bashrc to have the changes take effect.
+
+
+Next, install docker and docker-compose. Docker will enable you to deploy applications such as web servers, databases and Wordpress easily.
+I will recommend that you install them and better manage your deployments.
+
+To install docker and docker-compose, issue the following commands:
+
 > *apt install docker.io*
 >
 > *apt install docker-compose*
