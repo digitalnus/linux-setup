@@ -241,3 +241,10 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added 'github.com,140.82.112.4' (RSA) to the list of known hosts.
 Hi githubuser! You've successfully authenticated, but GitHub does not provide shell access.
 ```
+
+### 3.4 - Add the Identity key via ssh-add
+
+> *ssh-add ~/.ssh/id_ed25519*
+```
+Identity added: /home/user/.ssh/id_ed25519 (your_github_email@domain.com)
+```
