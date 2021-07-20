@@ -137,13 +137,60 @@ Congratulations, you have now secured access to your server! This is just the fi
 ### 2.4 - Other Non-security related setups
 This section will perform additional setups, not security-related, you can choose to skip it.
 
-Change your login shell to bash:
-> *sudo chsh -s /bin/bash yourusername*
-
+#### 2.4.1 Change to bash login shell
 If your user account was created using /bin/sh, you might discover that things like your up/down arrow etc will not be functioning.
 The above command will change it to /bin/bash and you either need to log out and into your account again or run the .bashrc to have the changes take effect.
 
+> *sudo chsh -s /bin/bash yourusername*
 
+#### 2.4.2 Change server timezone
+Check your server date/time by issuing the command:
+
+> *date*
+```
+Tue Jul 20 09:04:27 EDT 2021
+```
+
+This is showing the America/New_York timezone currently.
+
+To check what are the available timezones, issue the command:
+
+> *timedatectl list-timezones*
+```
+America/Iqaluit
+America/Jamaica
+America/Juneau
+America/Kentucky/Louisville
+America/Kentucky/Monticello
+America/La_Paz
+America/Lima
+America/Los_Angeles
+America/Maceio
+America/Managua
+America/Manaus
+America/Martinique
+America/Matamoros
+America/Mazatlan
+America/Menominee
+America/Merida
+America/Metlakatla
+America/Mexico_City
+America/Miquelon
+America/Moncton
+America/Monterrey
+America/Montevideo
+America/Nassau
+America/New_York
+America/Nipigon
+America/Nome
+...
+```
+
+Suppose you want to change to LA timezone, issue the command:
+
+> *sudo timedatectl set-timezone America/Los_Angeles*
+
+#### 2.4.3 Install Docker and docker-compose
 Next, install docker and docker-compose. Docker will enable you to deploy applications such as web servers, databases and Wordpress easily.
 I will recommend that you install them and better manage your deployments.
 
