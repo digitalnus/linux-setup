@@ -201,5 +201,28 @@ To install docker and docker-compose, issue the following commands:
 > *apt install docker-compose*
 
 
+## 3.0 Github Keys Setup
 
-
+> *ssh-keygen -t ed25519 -C "your_github_email@domain.com"*
+```
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/user/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/user/.ssh/id_ed25519
+Your public key has been saved in /home/user/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:FK4mF496AKxoZ8kJk5UHz4RO6DJzAPrh8V11G1eqOJA your_github_email@domain.com
+The key's randomart image is:
++--[ED25519 256]--+
+|..   .+o=        |
+|. . .=o= o       |
+|. ooEo. =        |
+| o++o=.O         |
+|  o=@ X S        |
+|   = ^ +         |
+|  . B O          |
+|   . +           |
+|                 |
++----[SHA256]-----+
+```
