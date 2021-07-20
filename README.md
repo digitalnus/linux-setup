@@ -248,3 +248,14 @@ Hi githubuser! You've successfully authenticated, but GitHub does not provide sh
 ```
 Identity added: /home/user/.ssh/id_ed25519 (your_github_email@domain.com)
 ```
+
+### 3.5 - Final setup!
+
+> *git remote set-url origin git@github.com:githubuser/your-repo.git*
+
+Make some changes to your-repo file, commit them and issue the command:
+
+> *git push*
+
+You can now interact with your github account without the need to key in your username and password each time!
+
