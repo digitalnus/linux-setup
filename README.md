@@ -203,6 +203,8 @@ To install docker and docker-compose, issue the following commands:
 
 ## 3.0 Github Keys Setup
 
+### 3.1 - Generating SSH Keypair
+
 > *ssh-keygen -t ed25519 -C "your_github_email@domain.com"*
 ```
 Generating public/private ed25519 key pair.
@@ -225,4 +227,17 @@ The key's randomart image is:
 |   . +           |
 |                 |
 +----[SHA256]-----+
+```
+
+### 3.2 - Adding Public Key to Github
+
+### 3.3 - Test connection to Github
+
+> *ssh -i ~/.ssh/id_ed25519 -T git@github.com*
+```
+The authenticity of host 'github.com (140.82.112.4)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kWUpJWBl7E4IGOCspRwmTxdCFRPviKw0E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.112.4' (RSA) to the list of known hosts.
+Hi githubuser! You've successfully authenticated, but GitHub does not provide shell access.
 ```
